@@ -1,7 +1,8 @@
-# a function which flats and print a list including lists:
+# it will flat and print nested lists:
+# I use inside_loop function to print flatter function's result.
 
 #example input = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
-#expected result = [1, 'a', 'cat', 2, 3, 'dog', 4, 5]
+#output = [1, 'a', 'cat', 2, 3, 'dog', 4, 5]
 
 def flatter(input_list):    
     def inside_loop(input_list):
