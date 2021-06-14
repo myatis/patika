@@ -1,14 +1,17 @@
-def flatter(input_list,flatten_list):
-    for item in input_list:
-        if type(item) != list:
-            flatten_list.append(item)
-        else:
-            flatter(item,flatten_list)
-            
+# a function which flats and print a list including lists:
 
-example = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
-flatten = []
+#example input = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+#expected result = [1, 'a', 'cat', 2, 3, 'dog', 4, 5]
+
+def flatter(input_list):    
+    def inside_loop(input_list):
+        for item in input_list:
+            if type(item) != list:
+                flatten_list.append(item)
+            else:
+                inside_loop(item)
+    flatten_list = []
+    inside_loop(input_list)
+    print(flatten_list)
 
 
-flatter(example, flatten)
-print(flatten)
