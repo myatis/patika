@@ -1,0 +1,19 @@
+# it will reverse lists also reverse nested lists aswell. 
+# I use nested_reverse_list function to print reverse_list functions result.
+
+def reverse_list(input_list):
+    def nested_reverse_list(input_list):
+        input_list.reverse()
+        for item in input_list:
+            if type(item) == list:
+                nested_reverse_list(item)
+            else:
+                pass
+    print(input_list)
+            
+# example list = [[1, 2], [3, 4], [5, 6, 7]]
+# output = [[[7, 6, 5], [4, 3], [2, 1]]
+
+# also if you nest more lists it will reverse them too.
+# example list = input_list = [[1, 2], [3, 4], [5, 6, 7,[8,9,10,[11,12,13]]]]
+# output = [[[[13, 12, 11], 10, 9, 8], 7, 6, 5], [4, 3], [2, 1]]
