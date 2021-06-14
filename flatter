@@ -1,0 +1,14 @@
+def flatter(input_list,flatten_list):
+    for item in input_list:
+        if type(item) != list:
+            flatten_list.append(item)
+        else:
+            flatter(item,flatten_list)
+            
+
+example = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+flatten = []
+
+
+flatter(example, flatten)
+print(flatten)
